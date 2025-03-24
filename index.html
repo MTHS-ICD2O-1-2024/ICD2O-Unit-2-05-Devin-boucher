@@ -1,9 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-ca">
   <head>
-    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Take Home Pay Calculator" />
+    <meta name="keywords" content="pay, taxes, salary" />
+    <meta name="author" content="Devin Boucher" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.getmdl.io/1.3.0/material.deep_purple-indigo.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Take Home Pay Calculator</title>
   </head>
+
   <body>
-    <p>Paragraph</p>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="./js/script.js"></script>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Take Home Pay Calculator</span>
+        </div>
+      </header>
+      <main class="mdl-layout__content">
+        <div class="right-image">
+          <img src="./images/income_tax.jpg" alt="Income_tax-Image" />
+        </div>
+        <h5>
+          <div class="page-content">Enter hours worked and hourly rate:</div>
+        </h5>
+        <br />
+        <form>
+          <!-- Hours input -->
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              pattern="-?[0-9]*(\.[0-9]+)?"
+              id="hours-worked"
+            />
+            <label class="mdl-textfield__label" for="hours-worked"
+              >Hours Worked</label
+            >
+            <span class="mdl-textfield__error">Input must be a number.</span>
+          </div>
+          <br />
+          <!-- Rate input -->
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              pattern="-?[0-9]*(\.[0-9]+)?"
+              id="hourly-rate"
+            />
+            <label class="mdl-textfield__label" for="hourly-rate"
+              >Hourly Rate ($)</label
+            >
+            <span class="mdl-textfield__error">Input must be a number.</span>
+          </div>
+          <br />
+          <!-- Calculate button -->
+          <button
+            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+            onclick="CalculatePay()"
+            type="button"
+          >
+            Calculate
+          </button>
+        </form>
+        <br />
+        <!-- Output answer -->
+        <div class="page-content-answer">
+          <div id="Answer"></div>
+        </div>
+      </main>
+    </div>
   </body>
 </html>
