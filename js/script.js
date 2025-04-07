@@ -13,14 +13,6 @@ function CalculatePay() {
   // Get input values
   const hours = parseFloat(document.getElementById("hours-worked").value)
   const rate = parseFloat(document.getElementById("hourly-rate").value)
-  const resultDisplay = document.getElementById("Answer")
-
-  // Validate inputs
-  if (isNaN(hours) || isNaN(rate)) {
-    resultDisplay.innerHTML = "Please enter valid numbers for hours and rate."
-    resultDisplay.style.color = "Black"
-    return
-  }
 
   // Calculate pay and taxes
   const grossPay = hours * rate
@@ -28,6 +20,5 @@ function CalculatePay() {
   const takeHomePay = grossPay - taxes
 
   // Display the results
-  resultDisplay.innerHTML = `Gross Pay: $${grossPay.toFixed(2)}<br>Taxes: $${taxes.toFixed(2)}<br>Take Home Pay: $${takeHomePay.toFixed(2)}`
-  resultDisplay.style.color = "Black"
+  document.getElementById("Answer").innerHTML = `Gross Pay: $${grossPay.toFixed(2)}<br>Taxes: $${taxes.toFixed(2)}<br>Take Home Pay: $${takeHomePay.toFixed(2)}`
 }
