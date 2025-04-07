@@ -13,10 +13,11 @@ function CalculatePay() {
   // Get input values
   const hours = parseFloat(document.getElementById("hours-worked").value)
   const rate = parseFloat(document.getElementById("hourly-rate").value)
+  const TAX_RATE = 0.18
 
   // Calculate pay and taxes
   const grossPay = hours * rate
-  const taxes = grossPay * 0.18
+  const taxes = grossPay * TAX_RATE
   const takeHomePay = grossPay - taxes
 
   // Display the results
