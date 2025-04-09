@@ -21,5 +21,8 @@ function CalculatePay() {
   const takeHomePay = grossPay - taxes
 
   // Display the results
-  document.getElementById("Answer").innerHTML = `Gross Pay: $${grossPay.toFixed(2)}<br>Taxes: $${taxes.toFixed(2)}<br>Take Home Pay: $${takeHomePay.toFixed(2)}`
-}
+  document.getElementById("Answer").innerHTML = `
+  Gross Pay: $${grossPay.toFixed(2)}<br>
+  Taxes: $${taxes.toFixed(2)}<br>
+  Take Home Pay: $${takeHomePay.toFixed(2)}
+`
